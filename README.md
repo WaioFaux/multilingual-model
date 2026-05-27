@@ -27,6 +27,7 @@ This project implements a multilingual-to-one (M2O) machine translation model us
 ```
 multilingual-model/
 ├── README.md                              # This file
+├── config.yaml                            # OpenNMT model configuration file
 ├── compute-bleu.py                        # BLEU score evaluation script
 ├── model_released.pt                      # Pre-trained model weights
 ├── ONMT-Training.ipynb                    # Google Colab notebook for training
@@ -130,6 +131,18 @@ The project includes two Google Colab notebooks for easy training:
 
 1. **ONMT-Data-Processing.ipynb** - Runs the complete data preparation pipeline
 2. **ONMT-Training.ipynb** - Trains the neural machine translation model
+
+### Configuration File (config.yaml)
+
+The `config.yaml` file contains all training hyperparameters and model settings for OpenNMT-py. It specifies:
+
+- **Data paths** - Training, validation, and test file locations
+- **Model architecture** - Transformer encoder-decoder settings, layer counts, hidden sizes
+- **Training parameters** - Learning rate, batch size, optimization settings, GPU configuration
+- **Vocabulary** - SentencePiece model paths and vocabulary sizes
+- **Checkpointing** - Model saving intervals and best model selection criteria
+
+Modify `config.yaml` to adjust training behavior, model size, and data paths before training.
 
 ### To train locally (advanced):
 
